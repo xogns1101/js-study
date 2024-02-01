@@ -7,7 +7,37 @@
 </head>
 <body>
     
-    
+    <script>
+
+        /*
+            점수를 입력 받아서,
+            점수가 90점 이상인 사람은 다시 한번 조건을 검사해서
+            95점 이상인 사람은 A+, 95점 미만이라면 A0라고 애기해주세요.
+            80점대는 B,
+            70점대는 C,
+            60점대는 D,
+            나머지는 모두 F 처리하세요.
+            출력은 alert 함수를 이용해서 출력하세요.
+        */
+
+        var score =+prompt('점수를 입력해주세요.');
+
+        if (score >= 95) {
+            alert('당신은 A+입니다.');
+        } else if(score >= 90) {
+            alert('당신은 A0입니다.');
+        } else if(score >= 80) {
+            alert('당신은 B점입니다.');
+        } else if(score >= 70) {
+            alert('당신은 C 점입니다.');
+        } else if(score >= 60) {
+            alert('당신은 D점입니다.');
+        } else {
+            alert('당신은 F점입니다.');
+        }
+
+
+    </script>
 
 
 </body>
