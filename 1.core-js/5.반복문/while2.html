@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 48~ 150 사이의 정수 중 8의 배수만 출력 해보자.
+        var n = 48; //begin
+        /*
+        while(n <= 150) { //end
+            if(n % 8 === 0) {
+                console.log(n);
+            }
+            n++; //step
+        } */
+
+        while(n <= 150) {
+            console.log(n);
+            n += 8;
+        }
+
+        console.log('---------------------------------');
+
+        // 1000의 약수의 개수를 구하세요.
+        // 1부터 1000까지 하나씩 올려가면서 1000이랑 나눠보세요
+        // 그랬을 때 나누어 떨어지는 수가 약수입니다.
+        // 출력하라는게 아니라 개수를 구하라 했으니, 개수를 기억할 애가 필요하겠네요
+
+        var i =1;
+        var cnt = 0;
+        
+        while(i <= 1000) {
+            if(1000 % i ===0)
+            cnt++;
+            i++;
+        }
+
+        console.log(`1000의 약수의 개수:` + cnt + '개');
+
+        /*
+         # 사용자에게 구구단 단수를 입력받아서
+         해당 단수의 구구단을 출력해 보세요.
+         ex)
+         
+         구구단을 입력하세요: 4
+         *** 구구단 4 단 ***
+         4 x 1 = 4
+         4 x 2 = 8
+         4 x 3 = 12
+         4 x 4 = 16 
+         .
+         .
+         .
+         4 x 9 = 36
+         */
+
+        var level = +prompt('구구단 단수를 입력하세요!')
+        console.log(`*** 구구단 ${level}단 ***`);
+
+        var j = 1
+        while(j <= 9) {
+            console.log(`${level} x ${j} = ${level*j}`);
+            j++;
+        }
+
+
+    
+    
+    </script>
+
+
+
+</body>
+</html>
