@@ -7,6 +7,9 @@
 </head>
 <body>
     <script>
+
+      var z = 'hello';
+
       // 즉시 실행 함수 (정의와 동시에 실행되는 함수)
       (function(x,y) {
         console.log(`x + y = ${x + y}`);
@@ -47,14 +50,20 @@
         }
       
         inner(); // outer 함수 내에서만 사용이 가능합니다.
-        //console.log(y); (x)
+        //console.log(y); (x) y는 innner 내에서만 유효함.
       }
+
+      var z = 'byebye';
 
       outer();
 
       // inner(); -> outer 함수 내에 선언된 함수 -> outer를 호출하지 않으면 애초에 존재하지 않는 함수.
-      // console.log(y); (x)
-      // console.log(x); (x)
+      // console.log(y); (x) y는 inner 내에서만 유효함.
+      // console.log(x); (x) x는 outer 내에서만 유효함
+      
+      console.log(z);
+
+
     </script>
 
 
