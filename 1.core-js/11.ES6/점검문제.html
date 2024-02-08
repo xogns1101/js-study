@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const traders = [{
+        trader: {
+          name: "김철수",
+          city: "대전",
+        },
+        year: 2023,
+        value: 500000,
+      },
+      {
+        trader: {
+          name: "박영희",
+          city: "서울",
+        },
+        year: 2022,
+        value: 600000,
+      },
+      {
+        trader: {
+          name: "김철수",
+          city: "대전",
+        },
+        year: 2022,
+        value: 1200000,
+      },
+      {
+        trader: {
+          name: "박영희",
+          city: "서울",
+        },
+        year: 2023,
+        value: 650000,
+      },
+      {
+        trader: {
+          name: "뽀로로",
+          city: "부산",
+        },
+        year: 2023,
+        value: 800000,
+      },
+      {
+        trader: {
+          name: "루피",
+          city: "대전",
+        },
+        year: 2022,
+        value: 780000,
+      },
+    ];
+
+
+    // 연습 1: 2022년에 발생한 모든 거래를 찾아
+    //   거래자 정보(이름, 도시)를 배열에 매핑해주세요
+    traders
+      .filter(human => human.year === 2022)
+      .map(human => `이름은 ${human.trader.name}이고 사는 도시는 ${human.trader.city}입니다.`)
+      .forEach(a => console.log(a));
+    // 연습 2: 거래자가 근무하는 모든 도시이름을 배열에 담아주세요.
+
+
+    // 연습 3: 대전에 근무하는
+    // 모든 거래자를 찾아 거래자정보(이름, 도시)를 배열에 매핑해주세요.
+    traders
+      .filter(Dae => Dae.trader.city === "대전")
+      .map(Dae => `대전에 근무하고 있는 거래자 이름은${Dae.trader.name}이고 사는 도시는 ${Dae.trader.city}입니다.`)
+      .forEach(c => console.log(c));
+    // 연습 4: 모든 거래자의 이름을 배열에 모아주세요.
+    traders
+      .filter(allHuman => allHuman.trader.name)
+      .map(allHuman => `모든 거래자의 이름은 ${allHuman.trader.name}`)
+      .forEach(d => console.log(d));
+
+    // 연습 5: 서울에 사는 거래자의 모든 거래액의 총합 출력.
+    traders
+      .filter(total => total.trader.city === "서울")
+      .map(total => total.value)
+
+    //----------------------------선생님풀이
+
+
+
+    // 연습 1: 2022년에 발생한 모든 거래를 찾아
+    //   거래자 정보(이름, 도시)를 배열에 매핑해주세요
+    traders
+      .filter(trs => trs.year === 2022)
+      .map(trs => trs.trader)
+      .forEach(trs => console.log(trs));
+
+
+    // 연습 2: 거래자가 근무하는 모든 도시이름을 배열에 담아주세요.
+    console.log('--------------------');
+    const mappedCities = traders.map(trs => trs.trader.city)
+    console.log(mappedCities);
+    // 연습 3: 대전에 근무하는
+    // 모든 거래자를 찾아 거래자정보(이름, 도시)를 배열에 매핑해주세요.
+    console.log('--------------------');
+    traders
+      .filter(trs => trs.trader.city === '대전')
+      .map(trs => trs.trader)
+      .forEach(trd => console.log(trd));
+
+    // 연습 4: 모든 거래자의 이름을 배열에 모아주세요.
+    console.log('--------------------');
+    const mappedNames = traders.map(trs => trs.trader.name);
+    const names = new Set(mappedNames);
+    console.log(names);
+    // 연습 5: 서울에 사는 거래자의 모든 거래액의 총합 출력.
+    // console.log('--------------------');
+    // let total = 0;
+    // traders
+    //   .filter(trs => trs.trader.city === '서울')
+    //   //.forEach(trs => total += trs.value);
+    //   .map(trs => trs.value)
+    //   .forEach(val => total += val);
+    //
+    // reduce 함수: 배열을 반복해서 각 요소에 콜백함수를 적용한
+    //              결과를 누적하는 함수
+
+    /*
+      array.reduce((누적값, 배열 요소) => 반복해서 실행할 내용(누적연산),acc의 초기값); 
+    */
+
+    const total = traders
+      .filter(trs => trs.trader.city === '서울')
+      .reduce((acc, curr) => acc + curr.value, 0)
+
+    console.log(`거래 총액: ${total}원`);
+  </script>
+
+
+
+</body>
+
+</html>
