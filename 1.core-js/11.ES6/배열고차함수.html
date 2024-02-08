@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+        const userList = [{
+        account: "abc1234",
+        userName: "대길이",
+        job: "추노",
+        address: "서울",
+        hobbies: ["수영", "축구", "테니스"],
+      },
+      {
+        account: "banana",
+        userName: "빠나나",
+        job: "과일",
+        address: "서울",
+        hobbies: ["푸드파이팅", "테니스"],
+      },
+      {
+        account: "park1234",
+        userName: "주차왕",
+        job: "발렛파킹",
+        address: "경기",
+        hobbies: ["족구", "축구", "테니스", "영화감상"],
+      },
+      {
+        account: "fire",
+        userName: "불꽃남자카리스마",
+        job: "게이머",
+        address: "서울",
+        hobbies: ["독서", "테니스"],
+      },
+    ];
+
+
+    //  배열 고차함수 
+    // forEach(): 배열의 요소를 반복하면서 하나씩 소비
+
+    userList.forEach(user=>{
+      console.log(`제 이름은 ${user.userName}구요~ \n ${user.address}에 살아요~`);
+    });
+
+    const foodList = ['짜장면', '탕수육', '치킨'];
+    foodList.forEach(food => console.log(`${food}맛있어요!`));
+
+
+    
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
