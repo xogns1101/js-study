@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      const emp = {
+        empName: '뽀로로',
+        age: 4,
+        hireDate: '2021-01-01',
+        birthDay: '2020-02-08'
+      };
+
+      const {empName, birthDay, age} = emp;
+
+      console.log(`내 이름은 ${empName}이고, 나이는 ${age}살 입니다. 그리고 생일은 ${birthDay}입니다.`);
+
+      // 변수명을 다르게 하고싶을떄 원래 에서 :을 붙여 새로 생성해줌
+      const {empName: en, birthDay: bd, age: a} = emp;
+
+      console.log(`내 이름은 ${en}이고, 나이는 ${a}살 입니다. 그리고 생일은 ${bd}입니다.`);
+
+      console.log('---------------');
+
+      const {birthDay: bDay, ...others} = emp;
+      console.log(others);
+
+      // 객체 복사
+      console.log('---------------');
+      const copyEmp = {
+        ...emp,
+        address: '마포구',
+        hobbies: ['산책', '수영'],
+        age: 17
+      };
+
+      console.log(`copy: ${copyEmp}`);
+      console.log(`origin: ${emp}`);
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
