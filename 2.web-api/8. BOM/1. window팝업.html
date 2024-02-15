@@ -20,7 +20,10 @@
     DOM -> window의 하위 객체.
     */
 
-    
+    const $popup = document.getElementById('popup');
+    $popup.onclick = () => {
+      window.open('https://www.naver.com', '네이버창', 'width=300, height=300, right=100, top=200');
+    };
 
     
 
